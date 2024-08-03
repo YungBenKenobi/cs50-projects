@@ -1,3 +1,4 @@
+// Takes a raw credit card number and assesses its validity and type
 #include <cs50.h>
 #include <stdio.h>
 
@@ -5,11 +6,8 @@ int prodfinder(int x);
 
 int main(void)
 {
-    // Take card number (cc) from user
-    long cc = get_long("Card Number: ");
-
-    // Initialise counter = 0
-    int counter = 0;
+    long cc = get_long("Card Number: ");    // Take card number (cc) from user
+    int counter = 0;    // Initialise counter = 0
 
     // Find digit values and places
     int a = cc % 10; // cc % 10 to find last digit and save to int
@@ -98,6 +96,7 @@ int main(void)
     int modulus = sum % 10; // Find modulo 10
     if (modulus == 0)
     {
+        // Check VISA
         if (counter == 13 && m == 4)
         {
             printf("VISA\n");
@@ -106,6 +105,7 @@ int main(void)
         {
             printf("VISA\n");
         }
+        // Check AMEX
         else if (counter == 15 && o == 3)
         {
             if (n == 4 || n == 7)
@@ -117,6 +117,7 @@ int main(void)
                 printf("INVALID\n");
             }
         }
+        // Check MASTERCARD
         else if (counter == 16 && p == 5)
         {
             if (o == 1 || o == 2 || o == 3 || o == 4 || o == 5)
@@ -139,6 +140,7 @@ int main(void)
     }
 }
 
+// Finds the product of a single digit input. Splits digits and sums together if initial product is more than 9
 int prodfinder(int x)
 {
     x = x * 2;

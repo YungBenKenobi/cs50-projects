@@ -79,20 +79,35 @@ int main(void)
         p = cc;
         counter ++;
     }
-    int producta;
+    int prodx;
     if(n > 0 && p > 0)
     {
-        producta = b + d + f + h + j + l + n + p;
+        prodx = (int prodb  = b * 2) + (d * 2) + (f * 2) + (h * 2) + (j * 2) + (l * 2) + (n * 2) + (p * 2);
     }
     else if(n > 0)
     {
-        producta = b + d + f + h + j + l + n;
+        prodx = (b * 2) + (d * 2) + (f * 2) + (h * 2) + (j * 2) + (l * 2) + (n * 2);
     }
     else
     {
-        producta = b + d + f + h + j + l;
+        prodx = (b * 2) + (d * 2) + (f * 2) + (h * 2) + (j * 2) + (l * 2);
     }
-    printf("Digit Count: %i\nProduct A: %i\n", counter, producta);
+    printf("Digit Count: %i\n", counter);
+    printf("Integer Test: ");
+    if(p > 0)
+    {
+        printf("%i",p);
+    }
+    if(o > 0)
+    {
+        printf("%i",o);
+    }
+    if(n > 0)
+    {
+        printf("%i",n);
+    }
+    printf("%i%i%i%i%i%i%i%i%i%i%i%i%i\n",m ,l, k, j, i, h, g, f, e, d, c, b, a);
+    printf("prodx: %i\n", prodx);
 }
 
 
